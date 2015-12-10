@@ -10,7 +10,6 @@ function process (raws) {
     .slidingWindow(512,512)
     .throttle(15)
     .map(mags)
-    .map(ms => ms.slice(0,40))
 
   return [
     ffts
