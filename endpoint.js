@@ -1,17 +1,7 @@
-// module.exports = function () {
-
-//   return [
-//     function (x) { console.log(x.length) }
-//   ]
-
-// }
-
-
 var h = require('virtual-dom/h')
   , main = require('main-loop')
   , _ = require('lodash')
   , LinScale = require('simple-linear-scale')
-
 
 
 // a function that builds the graph from a list
@@ -81,7 +71,7 @@ module.exports = function () {
       }
     ],
    taredown: () => {
-      // viewsEl.removeChild(ourDiv)
+      viewsEl.removeChild(ourDiv)
    }
  }
 }
