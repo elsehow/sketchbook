@@ -5,31 +5,32 @@ function mags (list) {
       fftjs.fft(list, 512))
 }
 
-function process (raws) {
+module.exports = (raws) => {
   var ffts = raws
     .slidingWindow(512,512)
     .throttle(15)
     .map(mags)
-    .map(m => m.slice(0,100))
+    .map(m => m.slice(5,40))
 
 // need
-// - log
-// - histogram
+// -dry-er histogram v. bargraph
+// - optional fields/colors for views
+// - break out spectral charms
+
+// think about
+// - a 'reset' button?
+// - taredown() when we load a new file
+// - to catch a runtime errors?
 
 // do
-// - no more open dev tools
-// - remember shape like text editor
 // - recent folders (that were successfully opened)
-// - notification should re-turn-blue on save
+// - setup script for new project..
 
 // downstream
-// - where to start - origin to endpoint?
 // - whats the new user experience like?
-// - 'new' template
+// - where to start? origin to endpoint?
 
   return [
     ffts
   ]
 }
-
-module.exports = process
